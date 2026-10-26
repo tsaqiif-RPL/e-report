@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101114">
+
+  <title>VALORANT Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image.png" href="image/image-removebg-preview (13).png">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="#" class="brand" aria-label="VALORANT Explorer Home">
+      <img
+        src="image/Valorant Coral Vector Logo.png"
+        alt="VALORANT"
+        class="brand-logo"
+      >
+    </a>
+
+    <nav class="main-nav" aria-label="Navigasi utama">
+      <button class="nav-link active" data-page="agents" aria-current="page">
+        Agents
+      </button>
+      <button class="nav-link" data-page="maps" aria-current="false">
+        Maps
+      </button>
+    </nav>
+
+    <p class="navbar-label">EXPLORER</p>
+  </header>
+
+  <main class="container">
+
+    <!-- AGENTS PAGE -->
+    <section id="agentsPage">
+      <div class="hero">
+        <p class="eyebrow">DISCOVER YOUR AGENT</p>
+        <h1>CHOOSE YOUR<br><span>PLAYSTYLE.</span></h1>
+        <p class="hero-description">
+          Explore agents and discover their unique abilities.
+        </p>
+
+        <input
+          type="search"
+          id="searchInput"
+          class="search-input"
+          placeholder="Cari nama agent..."
+          aria-label="Cari nama agent"
+        >
+      </div>
+
+      <section class="content-section">
+        <div class="section-heading">
+          <h2>ALL AGENTS</h2>
+          <p id="agentCount" aria-live="polite">Memuat agents...</p>
+        </div>
+
+        <div class="filter-list" id="roleFilters">
+          <button class="filter-btn active" data-role="all" aria-pressed="true">All Agents</button>
+          <button class="filter-btn" data-role="Duelist" aria-pressed="false">Duelist</button>
+          <button class="filter-btn" data-role="Initiator" aria-pressed="false">Initiator</button>
+          <button class="filter-btn" data-role="Controller" aria-pressed="false">Controller</button>
+          <button class="filter-btn" data-role="Sentinel" aria-pressed="false">Sentinel</button>
+        </div>
+
+        <div id="agentList" class="agent-grid">
+          <p class="message">Loading agents...</p>
+        </div>
+      </section>
+    </section>
+
+    <!-- MAPS PAGE -->
+    <section id="mapsPage" hidden>
+      <div class="hero">
+        <p class="eyebrow">EXPLORE THE BATTLEFIELD</p>
+        <h1>KNOW YOUR<br><span>PLAYGROUND.</span></h1>
+        <p class="hero-description">
+          Discover maps and explore each battlefield.
+        </p>
+
+        <input
+          type="search"
+          id="mapSearch"
+          class="search-input"
+          placeholder="Cari nama map..."
+          aria-label="Cari nama map"
+        >
+      </div>
+
+      <section class="content-section">
+        <div class="section-heading">
+          <h2>ALL MAPS</h2>
+          <p id="mapCount" aria-live="polite">Memuat maps...</p>
+        </div>
+
+        <div id="mapList" class="map-grid">
+          <p class="message">Loading maps...</p>
+        </div>
+      </section>
+    </section>
+
+  </main>
+
+  <!-- AGENT FULLSCREEN DETAIL -->
+  <div id="agentModal" class="detail-screen" hidden>
+    <button
+      class="detail-close"
+      id="closeAgent"
+      aria-label="Tutup detail agent"
+    >&times;</button>
+
+    <div id="agentDetail"></div>
+  </div>
+
+  <!-- MAP FULLSCREEN DETAIL -->
+  <div id="mapModal" class="detail-screen" hidden>
+    <button
+      class="detail-close"
+      id="closeMap"
+      aria-label="Kembali ke daftar map"
+    >&times;</button>
+
+    <div id="mapDetail" class="map-detail-content"></div>
+  </div>
+
+  <footer>
+    <p>Made by Tsaqiif.co · Unofficial VALORANT API Explorer</p>
+  </footer>
+
+</body>
+</html>
